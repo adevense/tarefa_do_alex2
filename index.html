@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Typing speed test: measure your words per minute and accuracy across easy, medium and hard passages.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+
+  <title>Frontend Mentor | Typing Speed Test</title>
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <picture class="logo">
+        <source media="(min-width: 37.5em)" srcset="./assets/images/logo-large.svg">
+        <img src="./assets/images/logo-small.svg" alt="" width="32" height="32" aria-hidden="true">
+      </picture>
+
+      <div class="app-heading">
+        <h1 class="app-title">Typing Speed Test</h1>
+        <p class="app-subtitle">Type as fast as you can in 60 seconds</p>
+      </div>
+
+      <p class="personal-best" id="personal-best">
+        <img id="personal-best-icon" src="./assets/images/icon-personal-best.svg" alt="" aria-hidden="true">
+        Personal best: <strong id="personal-best-value">&mdash; WPM</strong>
+      </p>
+    </header>
+
+    <main class="card">
+      <section class="stats-bar" aria-label="Test statistics and settings">
+        <dl class="stats">
+          <div class="stat">
+            <dt>WPM</dt>
+            <dd id="stat-wpm">0</dd>
+          </div>
+          <div class="stat">
+            <dt>Accuracy</dt>
+            <dd id="stat-accuracy">100%</dd>
+          </div>
+          <div class="stat">
+            <dt>Time</dt>
+            <dd id="stat-time">0:60</dd>
+          </div>
+        </dl>
+
+        <fieldset class="option-group" id="difficulty-fieldset">
+          <legend>Difficulty</legend>
+          <div class="option-buttons" role="group">
+            <input type="radio" name="difficulty" id="difficulty-easy" value="easy" class="option-input">
+            <label for="difficulty-easy" class="option-btn">Easy</label>
+
+            <input type="radio" name="difficulty" id="difficulty-medium" value="medium" class="option-input">
+            <label for="difficulty-medium" class="option-btn">Medium</label>
+
+            <input type="radio" name="difficulty" id="difficulty-hard" value="hard" class="option-input" checked>
+            <label for="difficulty-hard" class="option-btn">Hard</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="option-group" id="mode-fieldset">
+          <legend>Mode</legend>
+          <div class="option-buttons" role="group">
+            <input type="radio" name="mode" id="mode-timed" value="timed" class="option-input" checked>
+            <label for="mode-timed" class="option-btn">Timed (60s)</label>
+
+            <input type="radio" name="mode" id="mode-passage" value="passage" class="option-input">
+            <label for="mode-passage" class="option-btn">Passage</label>
+          </div>
+        </fieldset>
+      </section>
+
+      <div class="passage-wrapper">
+        <label for="typing-input" class="visually-hidden">
+          Type the passage shown below to start the test
+        </label>
+        <input
+          type="text"
+          id="typing-input"
+          class="typing-input"
+          autocomplete="off"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+          aria-describedby="passage"
+        >
+
+        <div class="passage" id="passage" aria-hidden="true"></div>
+
+        <div class="overlay" id="overlay-start">
+          <button type="button" class="btn btn-primary" id="start-btn">
+            Start Typing Test
+          </button>
+          <p class="overlay-hint">Or click the text and start typing</p>
+        </div>
+
+        <div class="overlay" id="overlay-complete" hidden role="status" aria-live="polite">
+          <img src="./assets/images/icon-completed.svg" alt="" class="overlay-icon" aria-hidden="true">
+          <h2 class="overlay-title">Test Complete!</h2>
+          <p class="overlay-message" id="complete-message">
+            Solid run. Keep pushing to beat your high score.
+          </p>
+
+          <dl class="result-stats">
+            <div class="result-stat">
+              <dt>WPM</dt>
+              <dd id="result-wpm">0</dd>
+            </div>
+            <div class="result-stat">
+              <dt>Accuracy</dt>
+              <dd id="result-accuracy">0%</dd>
+            </div>
+            <div class="result-stat">
+              <dt>Characters</dt>
+              <dd id="result-characters">0/0</dd>
+            </div>
+          </dl>
+
+          <button type="button" class="btn btn-primary" id="go-again-btn">
+            Go Again
+          </button>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <button type="button" class="btn btn-restart" id="restart-btn">
+        <img src="./assets/images/icon-restart.svg" alt="" aria-hidden="true">
+        Restart Test
+      </button>
+    </main>
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
