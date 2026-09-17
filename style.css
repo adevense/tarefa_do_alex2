@@ -268,3 +268,189 @@ body {
   opacity: 0.5;
   cursor: not-allowed;
 }   
+/* ==========================================================================
+   Passage / typing area
+   ========================================================================== */
+.passage-wrapper {
+  position: relative;
+}
+
+.typing-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: none;
+  background: transparent;
+}
+
+.passage {
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.375rem);
+  line-height: 1.7;
+  color: var(--color-text-faint);
+  letter-spacing: 0.01em;
+  min-height: 9rem;
+}
+
+.passage .char--correct {
+  color: var(--color-correct);
+}
+
+.passage .char--incorrect {
+  color: var(--color-incorrect);
+  text-decoration: underline;
+  text-decoration-color: var(--color-incorrect);
+}
+
+.passage .char--current {
+  background: var(--color-surface-alt);
+  border-radius: 0.125rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  background: hsla(240, 21%, 9%, 0.85);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(2px);
+  padding: 1.5rem;
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.overlay-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.overlay-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.overlay-message {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  max-width: 26rem;
+}
+
+.result-stats {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0.5rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.result-stat dt {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.result-stat dd {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.btn-primary:hover {
+  background: hsl(232, 100%, 60%);
+}
+
+.btn-restart {
+  align-self: center;
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.btn-restart:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.btn-restart img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ==========================================================================
+   Attribution
+   ========================================================================== */
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  color: var(--color-text-faint);
+}
+
+.attribution a {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 37.5em) {
+  .app-header {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .personal-best {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
