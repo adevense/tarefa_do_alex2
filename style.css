@@ -107,3 +107,68 @@ body {
   flex-direction: column;
   gap: 1.5rem;
 }
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.app-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.app-title {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  font-weight: 700;
+}
+
+.app-subtitle {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.personal-best {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.personal-best img {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.personal-best strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.personal-best.is-new-record strong {
+  color: var(--color-warning);
+}
+
+/* ==========================================================================
+   Card
+   ========================================================================== */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
